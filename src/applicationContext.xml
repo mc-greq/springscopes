@@ -17,6 +17,18 @@
     </bean>
 
     <!-- Define your beans here -->
+    <bean id="myFortuneService"
+          class="example.nio.HappyFortuneService">
+    </bean>
+
+    <bean id="myCoach"
+        class="example.nio.TrackCoach"
+        scope="prototype">
+
+        <!-- Constructor injection-->
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
 
 
 </beans>
